@@ -147,3 +147,28 @@ void BST::PrintChildren(int key) {
         std::cout << key << " is not in the tree.\n";
     }
 }
+
+int BST::FindSmallest()
+{
+    return FindSmallestPrivate(root);
+}
+
+int BST::FindSmallestPrivate(node* Ptr)
+{
+    if (root == NULL)
+    {
+        std::cout << "Tree is empty!\n";
+        return -1;
+    }
+    else
+    {
+        if(Ptr->left != NULL)
+        {
+            return FindSmallestPrivate(Ptr->left); // Traverse left
+        }
+        else
+        {
+            return Ptr->key; //Found the smallest
+        }
+    }
+}

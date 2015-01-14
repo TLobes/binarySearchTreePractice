@@ -26,6 +26,7 @@ private:
     void PrintInOrderPrivate(node* Ptr);
     node* ReturnNodePrivate(int key, node* Ptr);
     node* ReturnNode(int key);
+    int FindSmallestPrivate(node* Ptr);
     
 
 public:
@@ -35,6 +36,7 @@ public:
     void PrintInOrder(); // In-order traversal
     int ReturnRootKey();
     void PrintChildren(int key);
+    int FindSmallest();
 };
 
 #endif /* defined(__binarySearchTreePractice__binarySearchTree__) */
