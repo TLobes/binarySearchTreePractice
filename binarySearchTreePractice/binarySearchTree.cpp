@@ -218,7 +218,7 @@ void BST::RemoveRootMatch() {
         // Where root has no children
         if(root->left == NULL && root->right == NULL)
         {
-            root = nullptr;
+            root = NULL;
             delete delPtr;
         }
         
@@ -226,15 +226,15 @@ void BST::RemoveRootMatch() {
         else if (root->left == NULL && root->right != NULL)
         {
             root = root->right;
-            delPtr->right = nullptr;
+            delPtr->right = NULL;
             delete delPtr;
             std::cout << "The root node with key " << rootKey << " was deleted. " <<
             "The new root contains key " << root->key << std::endl;
         }
-        else if (root->left == NULL && root->right != NULL)
+        else if (root->left != NULL && root->right == NULL)
         {
             root = root->left;
-            delPtr->left = nullptr;
+            delPtr->left = NULL;
             delete delPtr;
             std::cout << "The root node with key " << rootKey << " was deleted. " <<
             "The new root contains key " << root->key << std::endl;
@@ -259,7 +259,7 @@ void BST::RemoveRootMatch() {
 void BST::RemoveMatch(node* parent, node* match, bool isLeft) {
     if(root != NULL)
     {
-        node* delPtr = nullptr;
+        node* delPtr;
         int matchKey = match->key;
         int smallestInRightSubtree;
         
@@ -267,7 +267,7 @@ void BST::RemoveMatch(node* parent, node* match, bool isLeft) {
         if (match->left == NULL && match->right == NULL)
         {
             delPtr = match;
-            isLeft == true ? parent->left = nullptr : parent->right = nullptr;
+            isLeft == true ? parent->left = NULL : parent->right = NULL;
             delete delPtr;
             std::cout << "The node containing key " << matchKey << " was removed\n";
         }
@@ -276,7 +276,7 @@ void BST::RemoveMatch(node* parent, node* match, bool isLeft) {
         else if (match->left == NULL && match->right != NULL)
         {
             isLeft == true ? parent->left = match->right : parent->right = match->right;
-            match->right = nullptr;
+            match->right = NULL;
             delPtr = match;
             delete delPtr;
             std::cout << "The node containing key " << matchKey << " was removed\n";
@@ -284,7 +284,7 @@ void BST::RemoveMatch(node* parent, node* match, bool isLeft) {
         else if (match->left != NULL && match->right == NULL)
         {
             isLeft == true ? parent->left = match->left : parent->right = match->left;
-            match->left = nullptr;
+            match->left = NULL;
             delPtr = match;
             delete delPtr;
             std::cout << "The node containing key " << matchKey << " was removed\n";
