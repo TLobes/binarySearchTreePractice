@@ -303,3 +303,26 @@ void BST::RemoveMatch(node* parent, node* match, bool isLeft) {
         std::cout << "Can not remove match. Tree is emtpy!\n";
     }
 }
+
+BST::~BST() {
+    RemoveSubtree(root);
+}
+
+// Post order traversal
+void BST::RemoveSubtree(node* Ptr) {
+    if(Ptr != NULL)
+    {
+        if (Ptr->left != NULL)
+        {
+            RemoveSubtree(Ptr->left);
+        }
+        
+        if (Ptr->right != NULL)
+        {
+            RemoveSubtree(Ptr->right);
+        }
+        
+        std::cout << "Deleted node containing " << Ptr->key << std::endl;
+        delete Ptr;
+    }
+}

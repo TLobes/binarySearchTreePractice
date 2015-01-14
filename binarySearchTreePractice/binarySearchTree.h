@@ -30,11 +30,13 @@ private:
     void RemoveNodePrivate(int key, node* parent);
     void RemoveRootMatch();
     void RemoveMatch(node* parent, node* match, bool isLeft);
+    void RemoveSubtree(node* Ptr);
     
 
 public:
     
     BST();
+    ~BST();
     void AddLeaf(int key);
     void PrintInOrder(); // In-order traversal
     int ReturnRootKey();
