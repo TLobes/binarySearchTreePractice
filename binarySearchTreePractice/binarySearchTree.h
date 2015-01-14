@@ -27,6 +27,9 @@ private:
     node* ReturnNodePrivate(int key, node* Ptr);
     node* ReturnNode(int key);
     int FindSmallestPrivate(node* Ptr);
+    void RemoveNodePrivate(int key, node* parent);
+    void RemoveRootMatch();
+    void RemoveMatch(node* parent, node* match, bool isLeft);
     
 
 public:
@@ -37,6 +40,7 @@ public:
     int ReturnRootKey();
     void PrintChildren(int key);
     int FindSmallest();
+    void RemoveNode(int key);
 };
 
 #endif /* defined(__binarySearchTreePractice__binarySearchTree__) */
