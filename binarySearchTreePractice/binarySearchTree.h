@@ -24,12 +24,13 @@ private:
     node* CreateLeaf(int key);
     void AddLeafPrivate(int key, node* Ptr);
     void PrintInOrderPrivate(node* Ptr);
+    node* ReturnNodePrivate(int key, node* Ptr);
+    node* ReturnNode(int key);
     
-    
+
 public:
     
     BST();
-    
     void AddLeaf(int key);
     void PrintInOrder(); // In-order traversal
 };
