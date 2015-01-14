@@ -62,3 +62,27 @@ void BST::AddLeafPrivate(int key, node* Ptr) {
         std::cout << "The key " << key << " has already been added\n";
     }
 }
+
+void BST::PrintInOrder() {
+    PrintInOrderPrivate(root);
+}
+
+void BST::PrintInOrderPrivate(node* Ptr) {
+    if(root != NULL)
+    {
+        if (Ptr->left != NULL)
+        {
+            PrintInOrderPrivate(Ptr->left);
+        }
+        
+        std::cout << Ptr->key << " ";
+        
+        if (Ptr->right != NULL)
+        {
+            PrintInOrderPrivate(Ptr->right);
+        }
+    }
+    else{
+        std::cout << "Empty Tree!\n";
+    }
+}
