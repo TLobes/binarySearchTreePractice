@@ -21,6 +21,7 @@ private:
     };
     
     node* root;
+    node* CreateLeaf(int key);
     void AddLeafPrivate(int key, node* Ptr);
     void PrintInOrderPrivate(node* Ptr);
     
@@ -28,7 +29,7 @@ private:
 public:
     
     BST();
-    node* CreateLeaf(int key);
+    
     void AddLeaf(int key);
     void PrintInOrder(); // In-order traversal
 };
