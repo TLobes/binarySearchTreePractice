@@ -116,3 +116,34 @@ BST::node* BST::ReturnNodePrivate(int key, node* Ptr) {
         return NULL;
     }
 }
+
+int BST::ReturnRootKey() {
+    if(root != NULL)
+    {
+        return root->key;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+void BST::PrintChildren(int key) {
+    node* Ptr = ReturnNode(key);
+    if (Ptr != NULL)
+    {
+        std::cout << "Parent Node = " << Ptr->key << std::endl;
+        
+        Ptr->left == NULL ?
+        std::cout << "Left Child = NULL\n" :
+        std::cout << "Left Child = " << Ptr->left->key << std::endl;
+        
+        Ptr->right == NULL ?
+        std::cout << "Right Child = NULL\n" :
+        std::cout << "Right Child = " << Ptr->right->key << std::endl;
+    }
+    else
+    {
+        std::cout << key << " is not in the tree.\n";
+    }
+}

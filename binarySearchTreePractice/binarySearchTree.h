@@ -33,6 +33,8 @@ public:
     BST();
     void AddLeaf(int key);
     void PrintInOrder(); // In-order traversal
+    int ReturnRootKey();
+    void PrintChildren(int key);
 };
 
 #endif /* defined(__binarySearchTreePractice__binarySearchTree__) */

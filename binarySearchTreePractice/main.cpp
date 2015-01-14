@@ -27,5 +27,13 @@ int main (int argc, char* argv[])
     
     myTree.PrintInOrder();
     
+    std::cout << std::endl;
+    
+    for (int i = 0; i < (sizeof(treeKeys) / sizeof(int)); i++)
+    {
+        myTree.PrintChildren(treeKeys[i]);
+        std::cout << std::endl;
+    }
+    
     return 0;
 }
